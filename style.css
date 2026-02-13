@@ -119,6 +119,14 @@ label { /* We'll add the spacing between labels here */
         NOTE: this will override what you did in the previous step! remember *Specificity*
     */
 
+label, input, textarea, button { /* We define the elements in which we want this to take effect */
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+label { /* We'll add the spacing between labels here */
+    margin-block: 0.5rem;
+}
+
 
 
 /* STEP 4: Style your projects page */
