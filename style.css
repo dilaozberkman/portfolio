@@ -25,7 +25,7 @@
 body {
     font: 100%/1.5 system-ui; /* 100% font size, 1.5 line height, system font. Same as in lab 1 */
     max-width: 120ch;
-    margin-inline: 5% 5%;
+    margin-inline: auto;
     padding: 2em;
 }
 
@@ -57,8 +57,8 @@ nav a {
     flex: 1; /* step 2.2 for each element to take the same space  */
     text-decoration: none; /* Remove the underline from the links by setting */
     color: inherit;
-    text-align: center
-    padding 0.5em;
+    text-align: center;
+    padding: 0.5em;
     /* Add here color */
     /* Add here text-align */
     /* Add here padding */
@@ -67,7 +67,9 @@ nav a {
     /* NOTE: please make sure that in each index.html page you add class="current" to the current page*/
         /* For example:  <a href="index.html" class="current">Home</a> */
 
-        nav a.current {
+        nav a.current {border-bottom-width: 0.4em;
+          border-bottom-color: oklch(80% 3% 200);
+          padding-bottom: 0.1em"
     /* Add here what your current page should look like at the navigation bar (highlight)*/
 }
 
