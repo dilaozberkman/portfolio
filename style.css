@@ -67,9 +67,10 @@ nav a {
     /* NOTE: please make sure that in each index.html page you add class="current" to the current page*/
         /* For example:  <a href="index.html" class="current">Home</a> */
 
-        nav a.current {border-bottom-width: 0.4em;
+        nav a.current {
+          border-bottom-width: 0.4em;
           border-bottom-color: oklch(80% 3% 200);
-          padding-bottom: 0.1em"
+          padding-bottom: 0.1em;
     /* Add here what your current page should look like at the navigation bar (highlight)*/
 }
 
