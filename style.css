@@ -136,9 +136,15 @@ button {
 }
 
 /* STEP 4: Style your projects page */
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-
-
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+}
 
 
 /* STEP 5: Style your CV */
