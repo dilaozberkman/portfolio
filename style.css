@@ -105,8 +105,8 @@ button {
 
 label, input, textarea, button { /* We define the elements in which we want this to take effect */
     display: block;
-    /* add width here*/
-    /* add box-sizing here */
+    width: 100%;
+    box-sizing: border-box;
 }
 label { /* We'll add the spacing between labels here */
     margin-block: 0.5rem;
