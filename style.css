@@ -212,7 +212,8 @@ img {
     }
 
     .cv-right {
-        text-align: right; /* Aligns city and date to the right margin */
+        text-align: right;
+        white-space: nowrap;
     }
 
     /* Remove default margins to keep company and title close together */
