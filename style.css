@@ -175,11 +175,6 @@ img {
              and then you can generate a layour just for your resume
              For example:
     */
-    #resume { /* Use this # as your ID selector */
-        max-width: 50rem;
-        /* ... */
-    }
-
     #resume header {
         color: var(--color-accent);
         display: flex;
