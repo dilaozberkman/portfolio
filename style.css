@@ -181,17 +181,18 @@ img {
     }
 
     #resume header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    border-bottom: 2px solid var(--color-accent);
-    margin-bottom: 2em;
+        color: var(--color-accent);
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        border-bottom: 4px solid var(--color-accent);
+        margin-bottom: 1em;
     }
 
     #resume section h3 {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0;
     }
 
     #resume section p em {
@@ -199,9 +200,32 @@ img {
     }
 
     #resume .skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Similar to your projects grid [cite: 385] */
-    gap: 1em;
-    list-style: none; /* Removes bullets for a modern look */
+    display: flex;
+    flex-wrap: wrap; /* Allows skills to wrap to next line naturally */
+    gap: 0.5em 1.5em; /* Vertical and horizontal spacing */
+    list-style: none;
     padding: 0;
+    }
+
+    #resume .skills-list li {
+        padding: 0.2em 0.5em;
+        background: oklch(from var(--color-accent) 95% 0.05 h); /* Subtly uses your accent color */
+        border-radius: 4px;
+    }
+
+    /* Layout for Experience/Education rows */
+    .cv-grid {
+        display: flex;
+        justify-content: space-between; /* Pushes left and right content to the edges */
+        align-items: flex-start;
+        margin-bottom: 0.5em;
+    }
+
+    .cv-right {
+        text-align: right; /* Aligns city and date to the right margin */
+    }
+
+    /* Remove default margins to keep company and title close together */
+    .cv-grid h3, .cv-grid p {
+        margin: 0;
     }
