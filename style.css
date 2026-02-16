@@ -218,5 +218,5 @@ img {
 
     /* Remove default margins to keep company and title close together */
     .cv-grid h3, .cv-grid p {
-        margin: 0.5em;
+        margin: 0em;
     }
