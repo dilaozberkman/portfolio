@@ -192,22 +192,21 @@ img {
 
     #resume .skills-list {
     display: flex;
-    flex-wrap: wrap; /* Allows skills to wrap to next line naturally */
-    gap: 0.5em 1.5em; /* Vertical and horizontal spacing */
+    flex-wrap: wrap;
+    gap: 0.5em 1.5em;
     list-style: none;
     padding: 0;
     }
 
     #resume .skills-list li {
         padding: 0.2em 0.5em;
-        background: oklch(from var(--border-gray) 95% 0.05 h); /* Subtly uses your accent color */
+        background: oklch(from var(--border-gray) 95% 5% h);
         border-radius: 4px;
     }
 
-    /* Layout for Experience/Education rows */
     .cv-grid {
         display: flex;
-        justify-content: space-between; /* Pushes left and right content to the edges */
+        justify-content: space-between;
         align-items: flex-start;
         margin-bottom: 0.5em;
     }
@@ -218,5 +217,5 @@ img {
 
     /* Remove default margins to keep company and title close together */
     .cv-grid h3, .cv-grid p {
-        margin: 0;
+        margin: 0.5em;
     }
