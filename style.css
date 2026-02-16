@@ -179,3 +179,29 @@ img {
         max-width: 50rem;
         /* ... */
     }
+
+    #resume header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--color-accent);
+    margin-bottom: 2em;
+    }
+
+    #resume section h3 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    }
+
+    #resume section p em {
+        color: var(--color-accent)
+    }
+
+    #resume .skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Similar to your projects grid [cite: 385] */
+    gap: 1em;
+    list-style: none; /* Removes bullets for a modern look */
+    padding: 0;
+    }
