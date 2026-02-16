@@ -195,10 +195,6 @@ img {
         margin-bottom: 0;
     }
 
-    #resume section p em {
-        color: var(--color-accent)
-    }
-
     #resume .skills-list {
     display: flex;
     flex-wrap: wrap; /* Allows skills to wrap to next line naturally */
@@ -209,7 +205,7 @@ img {
 
     #resume .skills-list li {
         padding: 0.2em 0.5em;
-        background: oklch(from var(--color-accent) 95% 0.05 h); /* Subtly uses your accent color */
+        background: oklch(from var(--border-gray) 95% 0.05 h); /* Subtly uses your accent color */
         border-radius: 4px;
     }
 
