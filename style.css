@@ -169,6 +169,12 @@ img {
     margin: 0;
 }
 
+.project-item a {
+    display: block;
+    margin-top: 10px; /* Adds a bit of space between the text and the link */
+    width: fit-content; /* Keeps the clickable area limited to the text length */
+}
+
 /* STEP 5: Style your CV */
 
     /* HINT: one thing you could do here is define an ID selector in your resume/index.html -> <section id="resume">
