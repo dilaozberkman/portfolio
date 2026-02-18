@@ -95,7 +95,7 @@ main {
 
 /* Ensure all visuals stay within the bounds of the page width */
 img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     display: block;
     margin: 1em auto; /* Centers the image and adds space above/below */
