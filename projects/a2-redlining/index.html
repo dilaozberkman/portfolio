@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" style="--vsc-domain: &quot;vis-society.github.io&quot;;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Vis &amp; Society Assignment 2</title>
+	<link rel="stylesheet" href="report.css">
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 2</small>
+			Exploratory Data Analysis
+		</h1>
+
+		<p>
+			<strong>Dila Ozberkman</strong> — <em>dilao003@mit.edu</em>
+		</p>
+	</header>
+	<main>
+		<section>
+			<h2>Redlining in Boston</h2>
+
+			<h3>Overall Analysis Questions</h3>
+			<ol>
+				<li><b>Is there a geographic pattern to redlining in the Greater Boston area?</b> - The background reading states that the HOLC created a uniform system of neighborhood grades that color-coded segments of major cities (Catherine Elton, 2020). The text highlights that sections of Roxbury were rated "hazardous" despite having good transportation and job proximity, while neighborhoods in suburbs like Milton were rated "still desirable". Investigating the spatial distribution will help visualize if the government's policy systematically targeted dense urban centers while favoring the "suburban home-building spree" mentioned in the text. From previous classes I have taken like 'The Ghetto', I have seen it is common to segregate minority populations into under-maintained, high density city centers while majorities move out to suburbs, practically segregating by flight.</li>
+				<li><b>How does the presence of industrial or commercial zoning correlate with the HOLC grades assigned to residential areas?</b> - The reading explains that redlined neighborhoods were often made to be "bad neighborhoods" where buildings were allowed to deteriorate and slumlords thrived. I am interested in seeing if these low grades were geographically tied to industrial sites, which might have lowered the perceived "security" of the investment for the HOLC. Also, location-wise it made sense to me that low-income and minority populations might work in more industrial areas rather than commercial so there might be some relationship with proximity to these areas.</li>
+				<li><b>Are there any disparities in HOLC grade distribution between City of Boston and its surrounding municipalities?</b> - According to the reading, FHA-insured homes in the suburbs were overwhelmingly occupied by white people (over 98%), while Black residents were located in specific city neighborhoods. The text explicitly mentions that by 1970, all of Boston's suburbs were about 98 percent white. By investigating the city and grade fields in the dataset, I can explore if the "Desirable" ratings were disproportionately allocated to the exclusionary suburbs mentioned as "90 percent white" in the background reading.</li>
+			</ol>
+			<p><em>Sources:</em> Elton, C. (2020, December 8). How has Boston gotten away with being segregated for so long?. Boston Magazine. https://www.bostonmagazine.com/news/2020/12/08/boston-segregation/ </p>
+		</section>
+
+		<section>
+			<h2>Discoveries &amp; Insights</h2>
+
+			<figure>
+				<img src="./visuals/grades_exploration.png" alt="">
+				<figcaption>
+				This is the initial exploration of grade values. I saw that there are 'Null' grades which need to be filtered out, and the grades range between A-D. There are much more B-C range grades compared to A and D. I decided to use colors of green to red for the different grades as traditionally used in the redlining maps in this usual and throughout the assignment.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/land_use_exploration.png" alt="">
+				<figcaption>
+				This is the first look at land use types present in the dataset. Most areas are categorised as residential, but there is a few industrial and commercial types too. The industrial areas will be interesting to explore as I try to answer whether there is a relationship between industrial areas and grade.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/grade_map.jpg" alt="">
+				<figcaption>
+				This is the first zoomed out view of the grades in different areas. We see that there is a large range across the whole area. My initial hypothesis that areas closer to downtown will be graded lower seems true from first look. Cities like Salem, Waltham seem to be graded higher and are further from downtown.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/grade_map_boston_winchester.jpg" alt="">
+				<figcaption>
+				To better reveal the comparison between city of Boston, which are the city center areas, and suburbs like Winchester, this visual puts them next to each other. Clearly we can see that majority of Boston is graded C or D while majority of Winchester is graded A or B. From previous classes, I know this was a method to encourage people to buy houses in the suburbs where they can get loans from the bank. This process leaves the minority populations in the city centers. While I selected Winchester here, the trend was the same in the other suburban areas I looked at.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/grade_by_city_normalised.png" alt="">
+				<figcaption>
+				This graph is a more abstract, quantitative way of observing the grade distribution between city center and suburbs. It normalizes the distribution to look at proportions rather than absolute numbers to remove the distraction of some cities having larger number of districts. We see areas closer to the center like Boston, Chelsea, Everett and Revere are primarily made up of C and D grade districts. In contrast Lexington, Arlington and Winchester which are further from the center are majority grade A and B.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/distance_to_industrial.png" alt="">
+				<figcaption>
+				Next I start exploring the relationship of industrial areas with grade of residential areas. To do this, I use the proximity to an industrial area as the comparison metric. For this, I create a separate dataset made up of only industrial areas. Then for each residential region I measure the distance from the edge of the region to the closest industrial area. I plot this as a box plor grouped by the different grades. While this gives a good metric to use, because it measures from the edges of the residential region, regardless of the distric that whole district is 0 miles away from an industrial area if it is directly next to an industrial area.
+
+				However this graph is still very useful since by simply looking we can see the mean distance to an industrial region decreases as the grade lowers. There seems to be high variance in B and C grades. Because the variances overlap with the means of the other groups it is hard to absolutely say there is a direct causation, but we can clearly observe a correlation.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/industrial_grades.jpg" alt="">
+				<figcaption>
+				I wanted to also explore if this trend is visible spatially. So for this visual I created a separate dataset of all the districts directly touching an industrial area and put the focus on them by increasing the transparency of the baseline dataset.
+
+				Zooming into the Boston region, we can clearly see that all the districts directly next to a industrial category is graded C or D. This is a very strong support point for my hypothesis that the population that works in industry like factories, which tend to be from minority, low income groups and live close to where they work, are graded low. This an assumption I made because lower income populations might not have the means to commute long distances hence it is common to live close to the industrial areas they might work at.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/industrial_grades_suburbs.jpg" alt="">
+				<figcaption>
+				I realised that with the previous visual I am presenting a biased view where I have only zoomed into the industrial areas closer to Boston while there are industrial areas in Salem and Lynn too. In these areas, the trend is not as clear. When we again look at the districts directly next to industrial areas, there are grade A and B regions present as well. My hypothesis is that because these are smaller cities the population is not as clearly condensed into certain regions so there is a larger variety of people living in a smaller area. This leads to a larger variety in grades too.
+				</figcaption>
+			</figure>
+
+
+
+
+
+			<figure>
+				<img src="./visuals/grades_exploration.png" alt="Distribution of HOLC Grades">
+				<figcaption>
+					<strong>Initial Grade Assessment:</strong> This exploration categorizes the HOLC grades present in the Greater Boston dataset. Grades range from 'A' (Best) to 'D' (Hazardous). The majority of neighborhoods fall within the B and C range, while 'A' and 'D' grades are less frequent. Traditional redlining colors—Green (A), Blue (B), Yellow (C), and Red (D)—are utilized here and throughout the study to remain consistent with historical mapping standards. There seems to be 'Null' values present due to non-residential areas that need to be filtered out in the subsequent visuals.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/land_use_exploration.png" alt="Land Use Categories">
+				<figcaption>
+					<strong>Land Use Characterization:</strong> While the dataset is predominantly comprised of residential zones, it also identifies dedicated industrial and commercial areas. These industrial sectors are critical for evaluating spatial correlation, as historical HOLC guidelines often viewed manufacturing proximity as a "detrimental influence" on residential security.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/grade_map.jpg" alt="Regional Grade Map">
+				<figcaption>
+					<strong>Spatial Distribution of Risk:</strong> A regional overview reveals a clear geographic gradient in grading. Neighborhoods in the city center are overwhelmingly graded lower than those on the periphery. This supports the hypothesis that proximity to the urban core was inversely correlated with investment security in the eyes of the HOLC.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/grade_map_boston_winchester.jpg" alt="Comparison: Boston vs. Winchester">
+				<figcaption>
+					<strong>Urban Core vs. Suburban Contrast:</strong> This side-by-side comparison highlights the stark disparity between the City of Boston and a typical suburb like Winchester. In <strong>Boston</strong>, only <strong>2.6%</strong> of neighborhoods received an 'A' grade, while <strong>30.7%</strong> were redlined as 'D'. In contrast, <strong>Winchester</strong> is composed entirely of 'A' (A1, A2) and 'B' (B1-B6) grades, with <strong>0%</strong> of its area graded 'C' or 'D'. This spatial pattern intentionally incentivized suburban flight for those eligible for bank loans, while trapping minority and lower-income populations in disinvested urban centers.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/grade_by_city_normalised.png" alt="Normalized Grade Proportions by City">
+				<figcaption>
+					<strong>Quantitative Comparison of Urban and Suburban Grading:</strong> This normalized bar chart provides a proportional comparison across all cities. It confirms that inner-ring cities like <strong>Chelsea</strong> and <strong>Everett</strong> are dominated by 'C' and 'D' grades, while affluent suburbs like <strong>Arlington</strong> and <strong>Lexington</strong> maintain majority 'A' and 'B' distributions. This visualization removes the distraction of number of district present in the cities through the normalization.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/distance_to_industrial.png" alt="Boxplot: Distance to Industry by Grade">
+				<figcaption>
+					<strong>The "Spatial Penalty" of Industrial Proximity:</strong> This analysis measures the physical distance between residential neighborhoods and the nearest industrial zone. A clear trend emerges: the lower the grade, the closer the neighborhood sits to industry.
+					<ul>
+						<li><strong>Redlined (D) Proximity:</strong> Neighborhoods graded 'D' have a median distance of <strong>0.0 miles</strong> from industrial zones, meaning over half are directly adjacent to factories.</li>
+						<li><strong>Premium (A) Insulation:</strong> Neighborhoods graded 'A' maintain a median "insulation" distance of <strong>1.78 miles</strong> from industrial activity.</li>
+					</ul>
+					While variance exists in the 'B' and 'C' categories, the mean distance to industry drops by over <strong>50%</strong> when moving from an 'A' grade (1.95 miles) to a 'D' grade (0.95 miles).
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/industrial_grades.jpg" alt="Industrial Intersection in Boston">
+				<figcaption>
+					<strong>Spacial Adjacency in the Urban Core:</strong> Zooming into Boston, the relationship between labor and geography is visible. Every residential district directly touching an industrial zone is graded 'C' or 'D'. This spatial clustering reinforces the assumption that low-income populations lived near industrial workplaces due to limited transportation means, which the HOLC subsequently used as a justification for lower investment security.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="./visuals/industrial_grades_suburbs.jpg" alt="Industrial Intersection in Outer Cities">
+				<figcaption>
+					<strong>Suburban Industrial Variations:</strong> In smaller industrial hubs like <strong>Salem</strong> and <strong>Lynn</strong>, the trend is more varied. Unlike the urban core, industrial areas in these cities occasionally intersect with 'A' or 'B' residential zones. This likely reflects a less condensed social fabric in smaller municipalities, where the rigid spatial segregation of the urban center was not yet fully realized.
+				</figcaption>
+			</figure>
+
+		</section>
+
+		<section>
+			<h2>Summary</h2>
+
+			<p>
+				This analysis demonstrates that redlining in Greater Boston was not merely a set of disconnected ratings but a systematic geographic project that fundamentally penalized urban density and industrial proximity. A primary lesson learned is the spatial penalty enforced by the HOLC: neighborhoods in the urban core, such as Boston, Chelsea, and Everett, were disproportionately redlined, with Boston seeing 30.7% of its areas graded as "Hazardous". In contrast, suburban municipalities like Winchester were insulated from these designations, with 0% of their area receiving a 'C' or 'D' grade. This geographic gradient effectively subsidized the suburban home-building spree for white populations while systematically denying investment to minority and low-income groups anchored in the city centers.
+
+				Furthermore, the study reveals a definitive spatial correlation between industrial zoning and residential disinvestment. The proximity analysis confirms that Grade D neighborhoods were often physically engulfed by industrial sites, maintaining a median distance of 0.0 miles from factories, compared to an insulation distance of nearly 2 miles for "Best" (A) rated areas. While some smaller industrial hubs like Salem and Lynn showed more varied social fabrics where industrial and high-grade residential zones overlapped, the urban core exhibited a rigid adjacency between labor, industry, and low HOLC grades. These findings underscore how planners utilized land-use patterns to codify racial and economic segregation, creating a process of urban deterioration that remains visible in Boston’s landscape today.
+			</p>
+		</section>
+	</main>
+
+
+</body></html>
