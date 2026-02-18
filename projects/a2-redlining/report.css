@@ -93,7 +93,16 @@ main {
 
 /* Figures */
 
+/* Ensure all visuals stay within the bounds of the page width */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto; /* Centers the image and adds space above/below */
+}
+
 figure {
+	max-width: 100%;
 	margin: 1em 0;
 	padding: .5rem;
 	margin-inline: -.5em;
