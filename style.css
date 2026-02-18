@@ -169,11 +169,6 @@ img {
     margin: 0;
 }
 
-.project-item a {
-    display: block;
-    margin-top: 5px; /* Adds a bit of space between the text and the link */
-    width: fit-content; /* Keeps the clickable area limited to the text length */
-}
 
 /* STEP 5: Style your CV */
 
