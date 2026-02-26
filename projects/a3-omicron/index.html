@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" style="--vsc-domain: &quot;vis-society.github.io&quot;;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Vis &amp; Society Assignment 3</title>
+	<link rel="stylesheet" href="report.css">
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 3</small>
+			Visualization Critique &amp; Redesign
+		</h1>
+
+		<p>
+			<strong>Dila Ozberkman</strong> — <em>dilao003@mit.edu</em>
+		</p>
+	</header>
+
+	<main>
+		<section>
+			<h2>Reading &amp; Critique</h2>
+
+			<figure>
+				<img src="covid-spiral.png" alt="">
+			</figure>
+
+			<p>
+				Insights about the data/visualization:
+			</p>
+
+			<ul>
+				<li>Each dotted line represents a month of the year, and the year changes every time the spiral crosses the vertical January line. The visual includes from January 2020 to January 2022.</li>
+				<li>The thickness of the spiral represents the 7-day average of the number of cases. Late 2020 and early 2021 sees a large peak, and there is an even larger peak at the beginning of 2022 right when the chart stops.</li>
+				<li>While the trends seem usually more continuously growing or decreasing, there are sudden jumps visible through irregularities in the graph around December and January months. Like the article says this might be due to reproting of cases during holiday seasons, where people might not be testing as much but might be spending more time in crowded spaces.</li>
+			</ul>
+
+			<p>
+				Design Critique:
+			</p>
+
+			<p>
+				The spiral design is highly expressive, using a form that intuitively mirrors the progression of a disease. It begins at a singular point in the center and expands outward as the pandemic spreads. This layout provides a clear starting point for the reader, who can naturally follow the chronological path from the earliest data points in the center to the most recent at the outer edge. The visual is great at revealing major trends and seasonal patterns at a glance. For instance, the dramatic peak in January 2022 and the smaller surge in late 2021 are immediately visible as prominent thick parts, while the relative calm of July 2021 is shown as a thin line. By labeling months along the circular radius and orienting text for legibility, the designer ensures that the audience can interpret the timeline without having to rotate the screen or their heads. For the general audience of the opinion article, this evocative shape serves as an effective hook that conveys the magnitude of the Omicron wave relative to previous years without requiring the reader to understand complex tables or graphs.
+
+				However, the visualization prioritizes these high-level trends at the expense of data precision, as absolute numbers are hidden from the reader. While the relative thickness of the spiral effectively shows surges, the provided legend is particularly unhelpful for determining specific case counts. The distance between the legend's scale and the spiral's varying curves makes it nearly impossible for a reader to accurately compare thickness to absolute values. For a target audience seeking to understand exact thresholds or compare specific numbers across different years, the circular encoding is an issue. Additionally, the visual feels like it is not very directly integrated into the article; it acts simply as a visual element while it could be a communication tool more linked to the text. To improve the design, the legend could be integrated more closely with the data marks, or the final redesign could explore more linear forms that allow for a traditional y-axis, making it easier to see exact numbers while maintaining the clear temporal trends.
+
+			</p>
+		</section>
+
+		<section>
+			<h2>Visualization Sketches</h2>
+
+      <figure>
+				<img src="./images/11.C35 Ass.2 Visuals_Page_1.png" alt="">
+				<figcaption>
+          Color modification for case count sketch
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 1:
+			</p>
+
+			<ul>
+				<li>I wanted to see if I could help readers determine absolute numbers more easily through color-coding while keeping the overall visual simple.</li>
+				<li>The chosen colors intuitively highlight different periods, using red for large waves and green for calm periods.</li>
+				<li>The sketch has many bright colors that might distract the reader from the article's text.</li>
+				<li>While the legend has more sections to help compare numbers, the high number of divisions may still be difficult to read quickly.</li>
+				<li>Seeing this made me wonder why certain trends occur rather than just focusing on the numbers, which is what I want to explore next.</li>
+			</ul>
+
+			<figure>
+				<img src="./images/11.C35 Ass.2 Visuals_Page_2.png" alt="">
+				<figcaption>
+          Sketch with event annotations
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 2:
+			</p>
+
+			<ul>
+				<li>I added annotations to address a reader's potential curiosity about the specific reasons behind the visible trends.</li>
+				<li>The spiral form allows for "slice-shaped" annotations that can effectively overlap multiple years at once.</li>
+				<li>The annotations are too dominant in this sketch and likely need to be smaller or a less prominent color to avoid overwhelming the data.</li>
+				<li>I want to combine these ideas: providing a way to read absolute numbers while also annotating trends for readers who are just looking for the main takeaway.</li>
+			</ul>
+
+			<figure>
+				<img src="./images/11.C35 Ass.2 Visuals_Page_3.png" alt="">
+				<figcaption>
+          Combined line graphs sketch
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 3:
+			</p>
+
+			<ul>
+				<li>I wanted to challenge the circular form and see if the same message could be communicated more clearly using traditional forms that readers already know.</li>
+				<li>I moved to three line graphs—one for each year—while keeping the "thickness" encoding and using a traditional baseline for the timeline.</li>
+				<li>This version is a bit confusing because the overlapping graphs don't have a specific meaning and actually make it harder to read absolute numbers.</li>
+				<li>I enjoy being creative by combining traditional graph types, and I think the empty space in the middle provides a great opportunity to add a layer that links better to the article text.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Final Visualization Design</h2>
+
+			<figure>
+				<img src="./images/final_visual-02-02.png" alt="">
+				<figcaption>
+          Final visual with 3 line graphs with annotations integrated into the article
+				</figcaption>
+			</figure>
+
+		</section>
+
+		<section>
+			<h2>Final Writeup</h2>
+
+			<p>
+        My final design transforms the concept from Sketch 3 by flipping it inside-out into a frame for the original opinion article, using a series of area graphs that symbolically and literalize the data as the context for the text. The primary message is that the pandemic was a period of volatile cycles, sudden spikes followed by fragile calm, and that these trends only make sense when viewed alongside the "why" behind them. To facilitate this, I used position and thickness as the primary visual encodings for the 7-day average of cases. Unlike the original spiral, which required readers to interpret two-way displacement from a moving center line, my design utilizes traditional vertical and horizontal baselines to make absolute numbers and relative growth easier to gauge. I also incorporated discrete annotations as offshoots from the graph to provide a narrative layer—explaining how factors like vaccine rollouts or seasonal behavior shifts influenced the data—thereby transforming the visualization from a mere symbol into a functional communication tool.
+      </p>
+
+			<p>
+        This critique by redesign process successfully addressed my initial concerns regarding the lack of integration between the visual and the text, as the data now physically frames the narrative. However, the design introduces its own set of tradeoffs. While flipping the graphs resolved the confusion of overlapping lines from my sketches, it resulted in a layout where the legend is somewhat hidden in the bottom-left corner, potentially making the y-axis scale less immediate for a first-time reader. Furthermore, having both a graph title and an article title in close proximity may create a slight hierarchy conflict. Despite these challenges, the design prioritizes a unique, engaging layout that mirrors the chaotic nature of the pandemic while providing a clearer path to understanding absolute values than the original spiral. Although the framing might be unconventional for a standard news layout, it achieves a deep link between the data and the opinion piece that was missing in the original publication.
+      </p>
+		</section>
+	</main>
+
+
+</body></html>
