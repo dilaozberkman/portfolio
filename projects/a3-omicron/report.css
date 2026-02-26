@@ -103,7 +103,10 @@ figure {
 	background: white;
 
 	img {
-		width: 100%;
+		width: 80%;
+		height: auto;
+		display: block;
+		margin: 1em auto; /* Centers the image and adds space above/below */
 	}
 
 	> figcaption {
